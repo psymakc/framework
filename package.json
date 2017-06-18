@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
-  "version": "2.0.1",
-  "description": "OptimizedHTML - Start HTML Template",
+  "name": "framework",
+  "version": "1.0",
+  "description": "Framework with Foundation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "Maxim Folko",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.11",
