@@ -11,6 +11,7 @@ var gulp           = require('gulp'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
 		notify         = require("gulp-notify");
+var config = require('./config/config.js');
 
 // Скрипты проекта
 
@@ -82,9 +83,9 @@ gulp.task('build', ['removedist', 'sass', 'js'], function() {
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'top-look.co.il',
-		user:      'fftest@fftest.top-look.co.il',
-		password:  'yahmam1984fol',
+		host:      config.host,
+		user:      config.ftpUser,
+		password:  config.ftpPassword,
 		parallel:  10,
 		log: gutil.log
 	});
