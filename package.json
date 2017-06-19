@@ -1,6 +1,6 @@
 {
   "name": "framework",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Framework with Foundation",
   "main": "index.js",
   "scripts": {
