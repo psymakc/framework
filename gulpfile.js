@@ -30,20 +30,7 @@ gulp.task('js', ['common-js'], function() {
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
-	.pipe(gulp.dest('dist/js'))
-	.pipe(browserSync.reload({stream: true}));
-});
-
-
-gulp.task('browser-sync', function() {
-	browserSync({
-		server: {
-			baseDir: 'app'
-		},
-		notify: false,
-		// tunnel: true,
-		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
-	});
+	.pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('sass', function() {
@@ -59,23 +46,7 @@ gulp.task('sass', function() {
 gulp.task('watch', ['sass', 'js'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('dist/**', ['deploy'])
-	//gulp.watch('app/*.html', browserSync.reload);
-	//gulp.start('deploy');
-});
-
-
-gulp.task('build', ['removedist', 'sass', 'js'], function() {
-
-	var buildCss = gulp.src([
-		'app/css/main.min.css',
-		]).pipe(gulp.dest('dist/css'));
-
-	var buildJs = gulp.src([
-		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
-
-
+	gulp.watch('dist/**', ['deploy']);
 });
 
 gulp.task('deploy', function() {
