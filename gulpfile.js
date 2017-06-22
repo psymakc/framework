@@ -16,9 +16,7 @@ var config = require('./config/config.js');
 // Скрипты проекта
 
 gulp.task('common-js', function() {
-	return gulp.src([
-		'app/js/common.js',
-		])
+	return gulp.src(['app/js/common.js',])
 	.pipe(concat('common.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('dist/js'));
@@ -92,7 +90,7 @@ gulp.task('deploy', function() {
 
 	var globs = ['dist/**'];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/wp-content/themes/test2/framework/dist/'));
+	.pipe(conn.dest('/wp-content/themes/'+config.themeName+'/framework/dist/'));
 
 });
 
