@@ -61,7 +61,7 @@ gulp.task('deploy', function() {
 
 	var globs = ['dist/**'];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/wp-content/themes/'+config.themeName+'/framework/dist/'));
+	.pipe(conn.dest('/public-html/wp-content/themes/'+config.themeName+'/framework/dist/'));
 
 });
 
